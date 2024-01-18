@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ClearlySpark/clearly-log#readme",
   "devDependencies": {
     "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "typescript": "5.3.3"
   }
 }
