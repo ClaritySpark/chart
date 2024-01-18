@@ -1,1 +1,1 @@
-# clearly-sdk
+# clearly-log-sdk
