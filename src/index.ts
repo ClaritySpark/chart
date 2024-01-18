@@ -1,9 +1,9 @@
 export class Log {
   constructor() {
-    console.log("Log class instantiated");
+    console.log('log');
   }
 
-  log(message: string) {
+  log(message: string): void {
     console.log(message);
   }
 }
