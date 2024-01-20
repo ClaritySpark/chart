@@ -1,11 +1,11 @@
-import { PropsWithChildren } from 'react';
-
 export interface BaseLoggerParams {
   title: string;
 }
+
 export interface ClickLoggerParams extends BaseLoggerParams {
   button: string;
 }
+
 export interface Logger<TParams> {
   logId: string;
   params: TParams;
@@ -18,9 +18,3 @@ export type UseLoggerReturn = {
   mount: MountLogger;
   click: ClickLogger;
 };
-
-export type LogContextReturn = {
-  secretKey: string;
-};
-
-export type LogProviderProps = PropsWithChildren<LogContextReturn>;
