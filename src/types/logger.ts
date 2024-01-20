@@ -18,5 +18,6 @@ export type UseLoggerReturn = {
 };
 
 export type LogProviderProps = {
+  secretKey: string;
   children: React.ReactNode | React.ReactNode[];
 } & UseLoggerReturn;
