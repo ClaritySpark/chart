@@ -3,7 +3,9 @@ import React from 'react';
 import { LogProviderProps, UseLoggerReturn } from './types';
 import { isValidSecretKey } from './utils';
 
-const ClearlyLoggerContext = React.createContext<UseLoggerReturn | null>(null);
+const ClearlyLoggerContext = React.createContext<UseLoggerReturn | null>(
+  {} as UseLoggerReturn | null,
+);
 
 export function useLoggerContext(): UseLoggerReturn {
   return React.useContext(ClearlyLoggerContext) as UseLoggerReturn;
@@ -19,7 +21,7 @@ export function LogProvider(props: LogProviderProps): JSX.Element {
   }
 
   return (
-    <ClearlyLoggerContext.Provider value={data as unknown as UseLoggerReturn}>
+    <ClearlyLoggerContext.Provider value={data as UseLoggerReturn}>
       {children}
     </ClearlyLoggerContext.Provider>
   );
