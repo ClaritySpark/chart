@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { LogProviderProps, UseLoggerReturn } from './types/logger';
+import { LogProviderProps, UseLoggerReturn } from './types';
 import { isValidSecretKey } from './utils';
 
 const ClearlyLoggerContext = React.createContext<UseLoggerReturn | null>(null);

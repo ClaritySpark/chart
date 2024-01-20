@@ -1,4 +1,4 @@
-import { UseLoggerReturn } from './types/logger';
+import { UseLoggerReturn } from './types';
 
 export function useLogger(): UseLoggerReturn {
   return {
