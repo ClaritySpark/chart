@@ -1,3 +1,5 @@
+import { PropsWithChildren } from 'react';
+
 export interface BaseLoggerParams {
   title: string;
 }
@@ -17,7 +19,8 @@ export type UseLoggerReturn = {
   click: ClickLogger;
 };
 
-export type LogProviderProps = {
+export type LogContextReturn = {
   secretKey: string;
-  children: React.ReactNode | React.ReactNode[];
-} & UseLoggerReturn;
+};
+
+export type LogProviderProps = PropsWithChildren<LogContextReturn>;
