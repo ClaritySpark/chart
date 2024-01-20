@@ -1,14 +1,20 @@
-export interface LoggerParams {
+export interface BaseLoggerParams {
   title: string;
+}
+export interface ClickLoggerParams extends BaseLoggerParams {
   button: string;
 }
-export interface Logger {
+export interface Logger<TParams> {
   logId: string;
-  params: LoggerParams;
+  params: TParams;
 }
 
+type MountLogger = (logger: Logger<BaseLoggerParams>) => void;
+type ClickLogger = (logger: Logger<ClickLoggerParams>) => void;
+
 export type UseLoggerReturn = {
-  click: ({ logId, params }: Logger) => void;
+  mount: MountLogger;
+  click: ClickLogger;
 };
 
 export type LogProviderProps = {
