@@ -1,1 +1,2 @@
-export * from './logger';
+export * from './useLogger.type';
+export * from './useLoggerContext.type';
