@@ -1,17 +1,26 @@
 import React from 'react';
 
-import { LogProviderProps, UseLoggerReturn } from './types/logger';
+import { LogProviderProps, UseLoggerReturn } from './types';
+import { isValidSecretKey } from './utils';
 
 const ClearlyLoggerContext = React.createContext<UseLoggerReturn | null>(null);
 
-export const useLoggerContext = (): UseLoggerReturn =>
-  React.useContext(ClearlyLoggerContext) as UseLoggerReturn;
+export function useLoggerContext(): UseLoggerReturn {
+  return React.useContext(ClearlyLoggerContext) as UseLoggerReturn;
+}
 
-export const LogProvider = (props: LogProviderProps) => {
-  const { children, ...data } = props;
+export function LogProvider(props: LogProviderProps): JSX.Element {
+  const { children, secretKey, ...data } = props;
+
+  if (!isValidSecretKey(secretKey)) {
+    console.error('Invalid secret key. LogProvider cannot be initialized.');
+
+    return <>{children}</>;
+  }
+
   return (
     <ClearlyLoggerContext.Provider value={data as unknown as UseLoggerReturn}>
       {children}
     </ClearlyLoggerContext.Provider>
   );
-};
+}
