@@ -11,10 +11,7 @@ export interface Logger<TParams> {
   params: TParams;
 }
 
-type MountLogger = (logger: Logger<BaseLoggerParams>) => void;
-type ClickLogger = (logger: Logger<ClickLoggerParams>) => void;
-
 export type UseLoggerReturn = {
-  mount: MountLogger;
-  click: ClickLogger;
+  mount: (logger: Logger<BaseLoggerParams>) => void;
+  click: (logger: Logger<ClickLoggerParams>) => void;
 };
