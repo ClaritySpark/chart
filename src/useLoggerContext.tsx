@@ -3,12 +3,12 @@ import React from 'react';
 import { LogProviderProps, LogContextReturn } from './types';
 import { isValidSecretKey } from './utils';
 
-const ClearlyLoggerContext = React.createContext<LogContextReturn | null>(
+const LogContext = React.createContext<LogContextReturn | null>(
   {} as LogContextReturn | null,
 );
 
 export function useLoggerContext(): LogContextReturn {
-  return React.useContext(ClearlyLoggerContext) as LogContextReturn;
+  return React.useContext(LogContext) as LogContextReturn;
 }
 
 export function LogProvider(props: LogProviderProps): JSX.Element {
@@ -21,8 +21,6 @@ export function LogProvider(props: LogProviderProps): JSX.Element {
   }
 
   return (
-    <ClearlyLoggerContext.Provider value={{ secretKey }}>
-      {children}
-    </ClearlyLoggerContext.Provider>
+    <LogContext.Provider value={{ secretKey }}>{children}</LogContext.Provider>
   );
 }
