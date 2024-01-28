@@ -18,8 +18,11 @@ jobs:
         with:
           node-version: "14"
 
+      - name: Install TurboRepo
+        run: npm install -g @bolt/turbo
+
       - name: Install dependencies
-        run: pnpm install
+        run: turbo install
 
       - name: Build with Turbo
-        run: pnpm build
+        run: turbo build
