@@ -1,0 +1,20 @@
+{
+  "name": "@log/utils",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "pnpm compile",
+    "compile": "tsc -p tsconfig.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "18.11.18",
+    "typescript": "5.3.3"
+  },
+  "files": [
+    "lib"
+  ]
+}
