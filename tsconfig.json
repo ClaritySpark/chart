@@ -1,15 +1,18 @@
 {
   "compilerOptions": {
-    "jsx": "react",
-    "outDir": "./dist",
-    "target": "es5",
-    "module": "commonjs",
-    "strict": true,
+    "declaration": true,
+    "declarationMap": true,
     "esModuleInterop": true,
+    "incremental": false,
+    "isolatedModules": true,
+    "lib": ["es2022", "DOM", "DOM.Iterable"],
+    "module": "NodeNext",
+    "moduleDetection": "force",
+    "moduleResolution": "NodeNext",
+    "noUncheckedIndexedAccess": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
-    "noImplicitAny": false,
-    "forceConsistentCasingInFileNames": true,
-  },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["node_modules"],
+    "strict": true,
+    "target": "ES2022"
+  }
 }

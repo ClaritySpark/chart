@@ -1,1 +1,0 @@
-export { isValidSecretKey } from './isValidSecretKey';
