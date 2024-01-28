@@ -1,38 +1,27 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+#IDE
+.idea
+.vscode
 
-# Dependencies
+storage
 node_modules
-.pnp
-.pnp.js
+*.map
 
-# Local env files
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+dist/
 
-# Testing
-coverage
+# near-api-js files & coverage
+neardev/
+coverage/
+.nyc_output
+src\.ts/protos\.d\.ts
+package\-lock\.json
+lib/
 
-# Turbo
+# OS X
+.DS_Store
+
+# Generated test files
+test-keys/
+
 .turbo
 
-# Vercel
-.vercel
-
-# Build Outputs
-.next/
-out/
-build
-dist
-
-
-# Debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Misc
-.DS_Store
-*.pem
+typedoc-docs/
