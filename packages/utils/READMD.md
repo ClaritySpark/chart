@@ -1,1 +1,1 @@
-# log utils
+# Clarity Log Utils

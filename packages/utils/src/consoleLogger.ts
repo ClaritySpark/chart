@@ -1,4 +1,4 @@
-import type { LoggerService, LogLevel } from "./interface";
+import type { LogLevel, LoggerService } from "./types/logger.type";
 
 export class ConsoleLogger implements LoggerService {
   public constructor(protected readonly logLevels: LogLevel[]) {}
