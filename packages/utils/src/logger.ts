@@ -1,5 +1,5 @@
 import { ConsoleLogger } from "./consoleLogger";
-import type { LogLevel, LoggerService } from "./types/logger.type";
+import type { LogLevel, LoggerService } from "@clarity/types";
 
 const DEFAULT_LOG_LEVELS: LogLevel[] = [
   "verbose",
