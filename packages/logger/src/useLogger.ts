@@ -1,15 +1,18 @@
-import { UseLoggerReturn } from "./types";
+import { Logger } from "@clarity/utils";
+import type { UseLoggerReturn } from "./types";
 
 export function useLogger(): UseLoggerReturn {
   return {
-    // TODO: { logId, params } save database
+    /**
+     * TODO
+     * Change to encapsulated logic
+     * { logId, params } save database
+     */
     mount: ({ logId, params }) => {
-      console.log("logId", logId);
-      console.log("params", params);
+      Logger.log("mount log", logId, params);
     },
     click: ({ logId, params }) => {
-      console.log("logId", logId);
-      console.log("params", params);
+      Logger.log("click log", logId, params);
     },
   };
 }

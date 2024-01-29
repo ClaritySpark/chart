@@ -19,11 +19,13 @@ importers:
         version: 5.3.3
 
   packages/logger:
-    dependencies:
+    devDependencies:
+      '@clarity/types':
+        specifier: workspace:*
+        version: link:../types
       '@clarity/utils':
         specifier: workspace:*
         version: link:../utils
-    devDependencies:
       '@types/node':
         specifier: 18.11.18
         version: 18.11.18
@@ -53,11 +55,10 @@ importers:
         version: 5.3.3
 
   packages/utils:
-    dependencies:
+    devDependencies:
       '@clarity/types':
         specifier: workspace:*
         version: link:../types
-    devDependencies:
       '@types/node':
         specifier: 18.11.18
         version: 18.11.18

@@ -1,4 +1,4 @@
-import type { LogLevel, LoggerService } from "./types/logger.type";
+import type { LogLevel, LoggerService } from "@clarity/types";
 
 export class ConsoleLogger implements LoggerService {
   public constructor(protected readonly logLevels: LogLevel[]) {}
