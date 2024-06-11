@@ -1,3 +1,3 @@
-# 🧨 Clearity-graph: Web Browser Graph UI
+# 🧨 clearity-chart: Web Browser chart UI
 
 ### 🚀 Incomplete, Coming Soon 🚀
