@@ -39,6 +39,9 @@ importers:
         specifier: ^1.9.9
         version: 1.13.4
     devDependencies:
+      husky:
+        specifier: 9.0.11
+        version: 9.0.11
       postcss:
         specifier: 8.4.38
         version: 8.4.38
@@ -1355,6 +1358,11 @@ packages:
 
   hosted-git-info@2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
+
+  husky@9.0.11:
+    resolution: {integrity: sha512-AB6lFlbwwyIqMdHYhwPe+kjOC3Oc5P3nThEoW/AaO2BX3vJDjWPFxYLxokUZOo6RNX20He3AaT8sESs9NJcmEw==}
+    engines: {node: '>=18'}
+    hasBin: true
 
   ignore@5.3.1:
     resolution: {integrity: sha512-5Fytz/IraMjqpwfd34ke28PTVMjZjJG2MPn5t7OE4eUCUNf8BAa7b5WUS9/Qvr6mwOQS7Mk6vdsMno5he+T8Xw==}
@@ -3839,6 +3847,8 @@ snapshots:
       function-bind: 1.1.2
 
   hosted-git-info@2.8.9: {}
+
+  husky@9.0.11: {}
 
   ignore@5.3.1: {}
 
