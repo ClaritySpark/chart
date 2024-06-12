@@ -6,9 +6,21 @@
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
-  "devDependencies": {
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
     "prettier": "^3.1.1",
-    "turbo": "latest",
+    "eslint-plugin-tailwindcss": "^3.12.0",
+    "eslint-config-next": "13.3.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-turbo": "^1.9.9",
+    "eslint-plugin-react": "^7.32.2",
+    "@typescript-eslint/parser": "^5.59.7",
+    "turbo": "^1.9.9"
+  },
+  "devDependencies": {
     "typescript": "5.3.3"
   },
   "packageManager": "pnpm@9.1.1",

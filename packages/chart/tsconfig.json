@@ -9,7 +9,11 @@
     "lib": ["es2016", "esnext", "dom"],
     "declaration": true,
     "outDir": "./dist",
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
