@@ -22,7 +22,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+    "resolveJsonModule": true
   },
   "include": [
     "next-env.d.ts",
