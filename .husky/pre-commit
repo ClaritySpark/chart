@@ -1,0 +1,14 @@
+pnpm lint ||
+(
+  echo 'turbo lint failed'
+  false; 
+)
+
+# check build
+pnpm build ||
+(
+  echo 'build failed'
+  false; 
+)
+
+echo 'committing...'
