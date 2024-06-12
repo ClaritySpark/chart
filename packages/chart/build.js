@@ -26,6 +26,5 @@ Promise.all([
     minify: true,
   }),
 ]).catch(() => {
-  console.log("Build failed");
   process.exit(1);
 });
