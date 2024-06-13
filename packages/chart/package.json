@@ -1,12 +1,12 @@
 {
   "name": "clarity-chart",
-  "version": "0.0.1",
+  "version": "0.1.4",
   "description": "chart component for react",
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
     "prepack": "pnpm build",
-    "build": "pnpm clean && pnpm build:tsc && pnpm build:js",
+    "build": "tsup src --dts --format esm,cjs",
     "build:tsc": "tsc --emitDeclarationOnly",
     "build:js": "node build.js",
     "clean": "rm -rf dist"
@@ -41,8 +41,6 @@
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
     "typescript": "5.3.3",
-    "@vercel/style-guide": "5.2.0",
-    "esbuild": "0.20.2",
-    "esbuild-node-externals": "1.13.0"
+    "@vercel/style-guide": "5.2.0"
   }
 }
