@@ -29,6 +29,9 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
+      - name: Install tsup
+        run: npm install -g tsup
+
       - name: Install dependencies
         run: pnpm install
 
