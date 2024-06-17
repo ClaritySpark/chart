@@ -1,5 +1,5 @@
 {
-  "name": "clarity-chart",
+  "name": "@clarityspark/clarity-chart",
   "private": true,
   "scripts": {
     "build": "turbo build",
@@ -35,5 +35,10 @@
   "packageManager": "pnpm@9.1.1",
   "engines": {
     "node": ">=18"
-  }
+  },
+  "version": "1.0.0",
+  "description": "### 🚀 Incomplete, Coming Soon 🚀",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }

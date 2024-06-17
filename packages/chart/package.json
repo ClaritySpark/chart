@@ -1,5 +1,5 @@
 {
-  "name": "clarity-chart",
+  "name": "@clarityspark/chart",
   "version": "0.1.8",
   "description": "chart component for react",
   "type": "module",
@@ -35,7 +35,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@clarity/shared": "workspace:*"
+    "@clarityspark/shared": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "18.11.18",
