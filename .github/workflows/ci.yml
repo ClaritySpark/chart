@@ -12,12 +12,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Setup Node.js 20.x
+        uses: actions/setup-node@v3
         with:
-          node-version: "18.17.0"
+          node-version: 20.x
 
       - name: Cache pnpm store
         uses: actions/cache@v2
@@ -27,14 +27,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
-      - name: Install pnpm
-        run: npm install -g pnpm
-
-      - name: Install typescript
-        run: npm install -g typescript
-
-      - name: Install tsup
-        run: npm install -g tsup
+      - name: Install global dependencies
+        run: npm install -g pnpm typescript tsup
 
       - name: Install dependencies
         run: pnpm install
