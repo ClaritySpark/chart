@@ -57,6 +57,9 @@ importers:
 
   apps/docs:
     dependencies:
+      '@clarityspark/chart':
+        specifier: 0.1.9
+        version: 0.1.9
       next:
         specifier: 14.2.4
         version: 14.2.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -292,6 +295,12 @@ packages:
 
   '@changesets/write@0.3.1':
     resolution: {integrity: sha512-SyGtMXzH3qFqlHKcvFY2eX+6b0NGiFcNav8AFsYwy5l8hejOeoeTDemu5Yjmke2V5jpzY+pBvM0vCCQ3gdZpfw==}
+
+  '@clarityspark/chart@0.1.9':
+    resolution: {integrity: sha512-J0Px8H90J7CaUBt7Q+2KZ0NTgp4VHCvfRPvjA2Eiyog2s+4uQy1eO4gSjJEsRFx9pGDc7RwnwEnXJzxDAGGeIw==}
+
+  '@clarityspark/shared@0.0.2':
+    resolution: {integrity: sha512-vxZhk2eho616zukvYeo2Dj0W78lJzMWZwTk7VJCjK+kFz4z/ro1yiwijAtHhOzlCfLcyvdCdj+G0O7XyxO90wQ==}
 
   '@eslint-community/eslint-utils@4.4.0':
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
@@ -2903,6 +2912,17 @@ snapshots:
       fs-extra: 7.0.1
       human-id: 1.0.2
       prettier: 2.8.8
+
+  '@clarityspark/chart@0.1.9':
+    dependencies:
+      '@clarityspark/shared': 0.0.2
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@clarityspark/shared@0.0.2':
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   '@eslint-community/eslint-utils@4.4.0(eslint@8.41.0)':
     dependencies:
