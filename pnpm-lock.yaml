@@ -79,6 +79,34 @@ importers:
 
   packages/chart:
     dependencies:
+      '@clarityspark/shared':
+        specifier: workspace:*
+        version: link:../shared
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@types/node':
+        specifier: 18.11.18
+        version: 18.11.18
+      '@types/react':
+        specifier: ^18.2.64
+        version: 18.3.3
+      '@types/react-dom':
+        specifier: ^18.2.21
+        version: 18.3.0
+      '@vercel/style-guide':
+        specifier: 5.2.0
+        version: 5.2.0(@next/eslint-plugin-next@13.5.6)(eslint@8.41.0)(prettier@3.3.2)(typescript@5.3.3)
+      typescript:
+        specifier: 5.3.3
+        version: 5.3.3
+
+  packages/shared:
+    dependencies:
       react:
         specifier: ^18.2.0
         version: 18.3.1

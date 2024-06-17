@@ -1,7 +1,6 @@
 {
-  "name": "@clarityspark/chart",
-  "version": "0.1.8",
-  "description": "chart component for react",
+  "name": "@clarityspark/shared",
+  "version": "0.0.1",
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
@@ -32,10 +31,10 @@
   ],
   "author": "<pmhxxhsj@gmail.com>",
   "license": "MIT",
+  "description": "",
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "@clarityspark/shared": "workspace:*"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "18.11.18",
