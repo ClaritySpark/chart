@@ -79,6 +79,9 @@ importers:
 
   packages/chart:
     dependencies:
+      '@clarity/shared':
+        specifier: workspace:*
+        version: link:../shared
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -101,6 +104,8 @@ importers:
       typescript:
         specifier: 5.3.3
         version: 5.3.3
+
+  packages/shared: {}
 
 packages:
 
