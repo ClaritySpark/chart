@@ -34,7 +34,8 @@
   "license": "MIT",
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "@clarity/shared": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "18.11.18",
