@@ -1,6 +1,6 @@
 {
   "name": "clarity-chart",
-  "version": "1.0.0",
+  "version": "0.1.8",
   "description": "chart component for react",
   "type": "module",
   "main": "dist/index.js",
