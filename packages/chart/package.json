@@ -1,6 +1,6 @@
 {
   "name": "@clarityspark/chart",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "chart component for react",
   "type": "module",
   "main": "dist/index.js",
