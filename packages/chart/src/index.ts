@@ -1,1 +1,1 @@
-export * from "./ui/BasicChart";
+export * from "./ui";
