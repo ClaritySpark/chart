@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "scripts": {
     "prepack": "pnpm build",
-    "build": "tsup src --dts --format esm,cjs",
+    "build": "pnpm run clean && tsup src --dts --format esm,cjs",
     "build:tsc": "tsc --emitDeclarationOnly",
     "build:js": "node build.js",
     "clean": "rm -rf dist"
@@ -36,9 +36,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "@clarityspark/shared": "workspace:*",
-    "tailwind-merge": "2.3.0",
-    "class-variance-authority": "0.7.0",
-    "clsx": "2.1.1"
+    "class-variance-authority": "0.7.0"
   },
   "devDependencies": {
     "@types/node": "18.11.18",
