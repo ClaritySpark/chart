@@ -12,7 +12,8 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@shared/*": ["../shared/src/*"]
     }
   },
   "include": ["src/**/*"],

@@ -58,8 +58,8 @@ importers:
   apps/docs:
     dependencies:
       '@clarityspark/chart':
-        specifier: 0.1.9
-        version: 0.1.9
+        specifier: workspace:*
+        version: link:../../packages/chart
       next:
         specifier: 14.2.4
         version: 14.2.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -85,6 +85,9 @@ importers:
       '@clarityspark/shared':
         specifier: workspace:*
         version: link:../shared
+      class-variance-authority:
+        specifier: 0.7.0
+        version: 0.7.0
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -104,18 +107,27 @@ importers:
       '@vercel/style-guide':
         specifier: 5.2.0
         version: 5.2.0(@next/eslint-plugin-next@13.5.6)(eslint@8.41.0)(prettier@3.3.2)(typescript@5.3.3)
+      tailwindcss:
+        specifier: 3.4.4
+        version: 3.4.4
       typescript:
         specifier: 5.3.3
         version: 5.3.3
 
   packages/shared:
     dependencies:
+      clsx:
+        specifier: 2.1.1
+        version: 2.1.1
       react:
         specifier: ^18.2.0
         version: 18.3.1
       react-dom:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
+      tailwind-merge:
+        specifier: 2.3.0
+        version: 2.3.0
     devDependencies:
       '@types/node':
         specifier: 18.11.18
@@ -129,6 +141,9 @@ importers:
       '@vercel/style-guide':
         specifier: 5.2.0
         version: 5.2.0(@next/eslint-plugin-next@13.5.6)(eslint@8.41.0)(prettier@3.3.2)(typescript@5.3.3)
+      tailwindcss:
+        specifier: 3.4.4
+        version: 3.4.4
       typescript:
         specifier: 5.3.3
         version: 5.3.3
@@ -295,12 +310,6 @@ packages:
 
   '@changesets/write@0.3.1':
     resolution: {integrity: sha512-SyGtMXzH3qFqlHKcvFY2eX+6b0NGiFcNav8AFsYwy5l8hejOeoeTDemu5Yjmke2V5jpzY+pBvM0vCCQ3gdZpfw==}
-
-  '@clarityspark/chart@0.1.9':
-    resolution: {integrity: sha512-J0Px8H90J7CaUBt7Q+2KZ0NTgp4VHCvfRPvjA2Eiyog2s+4uQy1eO4gSjJEsRFx9pGDc7RwnwEnXJzxDAGGeIw==}
-
-  '@clarityspark/shared@0.0.2':
-    resolution: {integrity: sha512-vxZhk2eho616zukvYeo2Dj0W78lJzMWZwTk7VJCjK+kFz4z/ro1yiwijAtHhOzlCfLcyvdCdj+G0O7XyxO90wQ==}
 
   '@eslint-community/eslint-utils@4.4.0':
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
@@ -800,6 +809,9 @@ packages:
     resolution: {integrity: sha512-NIxF55hv4nSqQswkAeiOi1r83xy8JldOFDTWiug55KBu9Jnblncd2U6ViHmYgHf01TPZS77NJBhBMKdWj9HQMQ==}
     engines: {node: '>=8'}
 
+  class-variance-authority@0.7.0:
+    resolution: {integrity: sha512-jFI8IQw4hczaL4ALINxqLEXQbWcNjoSkloa4IaufXCJr6QawJyw7tuRysRsrE8w2p/4gGaxKIt/hX3qz/IbD1A==}
+
   clean-regexp@1.0.0:
     resolution: {integrity: sha512-GfisEZEJvzKrmGWkvfhgzcz/BllN1USeqD2V6tg14OAOgaCD2Z/PUEuxnAZ/nPvmaHRG7a8y77p1T/IRQ4D1Hw==}
     engines: {node: '>=4'}
@@ -817,6 +829,14 @@ packages:
   clone@1.0.4:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
+
+  clsx@2.0.0:
+    resolution: {integrity: sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==}
+    engines: {node: '>=6'}
+
+  clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
+    engines: {node: '>=6'}
 
   color-convert@1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
@@ -2343,6 +2363,9 @@ packages:
     resolution: {integrity: sha512-7RnqIMq572L8PeEzKeBINYEJDDxpcH8JEgLwUqBd3TkofhFRbkq4QLR0u+36avGAhCRbk2nnmjcW9SE531hPDg==}
     engines: {node: ^14.18.0 || >=16.0.0}
 
+  tailwind-merge@2.3.0:
+    resolution: {integrity: sha512-vkYrLpIP+lgR0tQCG6AP7zZXCTLc1Lnv/CCRT3BqJ9CZ3ui2++GPaGb1x/ILsINIMSYqqvrpqjUFsMNLlW99EA==}
+
   tailwindcss@3.4.4:
     resolution: {integrity: sha512-ZoyXOdJjISB7/BcLTR6SEsLgKtDStYyYZVLsUtWChO4Ps20CBad7lfJKVDiejocV4ME1hLmyY0WJE3hSDcmQ2A==}
     engines: {node: '>=14.0.0'}
@@ -2912,17 +2935,6 @@ snapshots:
       fs-extra: 7.0.1
       human-id: 1.0.2
       prettier: 2.8.8
-
-  '@clarityspark/chart@0.1.9':
-    dependencies:
-      '@clarityspark/shared': 0.0.2
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-
-  '@clarityspark/shared@0.0.2':
-    dependencies:
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
 
   '@eslint-community/eslint-utils@4.4.0(eslint@8.41.0)':
     dependencies:
@@ -3500,6 +3512,10 @@ snapshots:
 
   ci-info@3.9.0: {}
 
+  class-variance-authority@0.7.0:
+    dependencies:
+      clsx: 2.0.0
+
   clean-regexp@1.0.0:
     dependencies:
       escape-string-regexp: 1.0.5
@@ -3519,6 +3535,10 @@ snapshots:
       wrap-ansi: 7.0.0
 
   clone@1.0.4: {}
+
+  clsx@2.0.0: {}
+
+  clsx@2.1.1: {}
 
   color-convert@1.9.3:
     dependencies:
@@ -5227,6 +5247,10 @@ snapshots:
     dependencies:
       '@pkgr/core': 0.1.1
       tslib: 2.6.3
+
+  tailwind-merge@2.3.0:
+    dependencies:
+      '@babel/runtime': 7.24.7
 
   tailwindcss@3.4.4:
     dependencies:
