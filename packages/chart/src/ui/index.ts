@@ -1,3 +1,1 @@
-import { BasicChart } from "./BasicChart";
-
-export { BasicChart };
+export * from "./BasicChart";

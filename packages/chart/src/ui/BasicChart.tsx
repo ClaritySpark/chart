@@ -15,25 +15,43 @@ const basicChartVariants = cva("flex flex-col gap-4 rounded-lg p-4", {
   },
 });
 
-export interface BasicChartProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof basicChartVariants> {
-  data: { x: string; value: number }[];
+export type BasicChartDataSetsType = {
+  label?: string;
+  value: number;
+  color?: string;
+}[];
+
+export interface BasicChartType {
+  title?: string;
+  datasets: BasicChartDataSetsType;
 }
+
+interface Props
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof basicChartVariants>,
+    BasicChartType {}
 
 export const BasicChart = ({
   className,
   variant,
-  data,
+  title,
+  datasets,
   ...props
-}: BasicChartProps) => {
+}: Props) => {
   return (
     <div className={cn(basicChartVariants({ variant }), className)} {...props}>
-      {data.map((item) => (
-        <div key={item.x} className="flex items-center gap-2">
+      {title && <h2 className={cn("font-bold text-gray-900")}>{title}</h2>}
+      {datasets.map(({ label, value, color }) => (
+        <div
+          key={label}
+          className="flex items-center gap-2"
+          style={{
+            backgroundColor: color,
+          }}
+        >
           <div className="size-4 rounded-full bg-black" />
-          <span>{item.x}</span>
-          <span>{item.value}</span>
+          <span>{label}</span>
+          <span>{value}</span>
         </div>
       ))}
     </div>
