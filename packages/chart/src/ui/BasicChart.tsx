@@ -1,13 +1,16 @@
+"use client";
 import React from "react";
 import { cn } from "@clarityspark/shared";
 import { cva, type VariantProps } from "class-variance-authority";
+import { useAnimatedValue } from "../hooks/useAnimatedValue";
+import { getRandomColor } from "../utils/getRandomColor";
 
-const basicChartVariants = cva("flex flex-col gap-4 rounded-lg p-4", {
+const basicChartVariants = cva("flex flex-col gap-4 rounded-lg p-6", {
   variants: {
     variant: {
-      default: "bg-black",
-      secondary: "bg-gray-200",
-      destructive: "bg-red-500",
+      default: "bg-white shadow-lg",
+      secondary: "bg-gray-100 shadow-md",
+      destructive: "bg-red-50 shadow-md",
     },
   },
   defaultVariants: {
@@ -15,27 +18,59 @@ const basicChartVariants = cva("flex flex-col gap-4 rounded-lg p-4", {
   },
 });
 
-export interface BasicChartProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof basicChartVariants> {
-  data: { x: string; value: number }[];
+export type BasicChartDataSetsType = {
+  label: string;
+  value: number;
+  color?: string;
+}[];
+
+interface BasicChartType {
+  title?: string;
+  datasets: BasicChartDataSetsType;
 }
 
-export const BasicChart = ({
-  className,
-  variant,
-  data,
-  ...props
-}: BasicChartProps) => {
+interface Props
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof basicChartVariants>,
+    BasicChartType {}
+
+export const BasicChart = ({ variant, title, datasets, ...props }: Props) => {
+  const maxValue = Math.max(...datasets.map((item) => item.value));
+
+  const animatedValues = useAnimatedValue({
+    datasets,
+    duration: 100,
+  });
+
   return (
-    <div className={cn(basicChartVariants({ variant }), className)} {...props}>
-      {data.map((item) => (
-        <div key={item.x} className="flex items-center gap-2">
-          <div className="size-4 rounded-full bg-black" />
-          <span>{item.x}</span>
-          <span>{item.value}</span>
-        </div>
-      ))}
+    <div
+      className={cn(basicChartVariants({ variant }), "min-w-[300px]")}
+      {...props}
+    >
+      {title && (
+        <h2 className="mb-4 text-xl font-bold text-gray-800">{title}</h2>
+      )}
+      <div className="space-y-4">
+        {animatedValues.map(({ label, value, color, currentValue }, index) => (
+          <div key={`${label}${index}`} className="space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-medium text-gray-600">{label}</span>
+              <span className="text-sm font-semibold text-gray-800">
+                {value}
+              </span>
+            </div>
+            <div className="h-4 w-full overflow-hidden rounded-full bg-gray-200">
+              <div
+                className="h-full rounded-full transition-all duration-1000 ease-out"
+                style={{
+                  width: `${(currentValue / maxValue) * 100}%`,
+                  backgroundColor: color || getRandomColor(),
+                }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
