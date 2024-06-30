@@ -21,7 +21,7 @@ export type BasicChartDataSetsType = {
   color?: string;
 }[];
 
-export interface BasicChartType {
+interface BasicChartType {
   title?: string;
   datasets: BasicChartDataSetsType;
 }
