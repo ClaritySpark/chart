@@ -31,15 +31,9 @@ interface Props
     VariantProps<typeof basicChartVariants>,
     BasicChartType {}
 
-export const BasicChart = ({
-  className,
-  variant,
-  title,
-  datasets,
-  ...props
-}: Props) => {
+export const BasicChart = ({ variant, title, datasets, ...props }: Props) => {
   return (
-    <div className={cn(basicChartVariants({ variant }), className)} {...props}>
+    <div className={cn(basicChartVariants({ variant }))} {...props}>
       {title && <h2 className={cn("font-bold text-gray-900")}>{title}</h2>}
       {datasets.map(({ label, value, color }) => (
         <div
