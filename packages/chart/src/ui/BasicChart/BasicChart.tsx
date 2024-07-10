@@ -2,8 +2,8 @@
 import React from "react";
 import { cn } from "@clarityspark/shared";
 import { cva, type VariantProps } from "class-variance-authority";
-import { useAnimatedValue } from "../hooks/useAnimatedValue";
-import { getRandomColor } from "../utils/getRandomColor";
+import { useAnimatedValue } from "../../hooks/useAnimatedValue";
+import { getRandomColor } from "../../utils/getRandomColor";
 
 const basicChartVariants = cva("flex flex-col gap-4 rounded-lg p-6", {
   variants: {
