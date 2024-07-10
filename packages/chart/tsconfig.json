@@ -1,21 +1,21 @@
 {
-  "extends": "@vercel/style-guide/typescript",
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "esModuleInterop": true,
+    "types": ["jest", "@testing-library/jest-dom"],
     "lib": ["es2016", "esnext", "dom"],
     "declaration": true,
     "outDir": "./dist",
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
       "@shared/*": ["../shared/src/*"]
     }
   },
-  "include": ["src/**/*"],
+  "include": ["src", "jest.config.ts", "jest.setup.ts"],
   "exclude": ["node_modules", "dist"]
 }
