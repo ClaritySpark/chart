@@ -26,6 +26,7 @@ export type BasicChartDataSetsType = {
 
 interface BasicChartType {
   title?: string;
+  disableAnimation?: boolean;
   datasets: BasicChartDataSetsType;
 }
 
@@ -34,16 +35,23 @@ interface Props
     VariantProps<typeof basicChartVariants>,
     BasicChartType {}
 
-export const BasicChart = ({ variant, title, datasets, ...props }: Props) => {
+export const BasicChart = ({
+  variant,
+  title,
+  datasets,
+  disableAnimation = false,
+  ...props
+}: Props) => {
   const maxValue = Math.max(...datasets.map((item) => item.value));
 
   const animatedValues = useAnimatedValue({
     datasets,
-    duration: 100,
+    duration: disableAnimation ? 0 : 100,
   });
 
   return (
     <div
+      role="region"
       className={cn(basicChartVariants({ variant }), "min-w-[300px]")}
       {...props}
     >
@@ -52,14 +60,17 @@ export const BasicChart = ({ variant, title, datasets, ...props }: Props) => {
       )}
       <div className="space-y-4">
         {animatedValues.map(({ label, value, color, currentValue }, index) => (
-          <div key={`${label}${index}`} className="space-y-2">
+          <div key={`${label}${index}`} className="space-y-2" role="listitem">
             <div className="flex items-center justify-between">
               <span className="text-sm font-medium text-gray-600">{label}</span>
               <span className="text-sm font-semibold text-gray-800">
                 {value}
               </span>
             </div>
-            <div className="h-4 w-full overflow-hidden rounded-full bg-gray-200">
+            <div
+              className="h-4 w-full overflow-hidden rounded-full bg-gray-200"
+              role="progressbar"
+            >
               <div
                 className="h-full rounded-full transition-all duration-1000 ease-out"
                 style={{
